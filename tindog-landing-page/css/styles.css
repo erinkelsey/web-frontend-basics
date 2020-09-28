@@ -157,12 +157,20 @@ p {
 }
 
 @media (max-width: 1028px) {
-  #title {
+  .title-elements {
     text-align: center;
   }
 
   .title-image {
     position: static;
     transform: rotate(0);
+  }
+
+  .container-fluid {
+    padding: 7% 7%;
+  }
+
+  .nav-link {
+    font-weight: 400;
   }
 }
