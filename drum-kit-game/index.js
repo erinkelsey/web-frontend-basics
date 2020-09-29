@@ -3,13 +3,15 @@
  * @param {char} key the key pressed/clicked to play specific sound
  */
 function buttonAnimation(key) {
-  const activeButton = document.querySelector("." + key);
+  try {
+    const activeButton = document.querySelector("." + key);
 
-  activeButton.classList.add("pressed");
+    activeButton.classList.add("pressed");
 
-  setTimeout(function () {
-    activeButton.classList.remove("pressed");
-  }, 100);
+    setTimeout(function () {
+      activeButton.classList.remove("pressed");
+    }, 100);
+  } catch (e) {}
 }
 
 /**
