@@ -1,4 +1,10 @@
-# jQuery Basics
+# Simon Game
+
+Play the classic Simon Game, by trying to match the pattern. Implemented with HTML, CSS, JavaScript, and jQuery.
+
+Hosted example: http://simongame-site.s3-website.ca-central-1.amazonaws.com
+
+## jQuery Basics
 
 Basic usage notes for jQuery JavaScript library.
 
