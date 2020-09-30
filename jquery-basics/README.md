@@ -102,25 +102,33 @@ Add element before another:
 
     $("h1").before("<button>New</button>");
 
-This will add a button element before the h1 element, i.e. <button>New</button><h1>Hello</h1>
+This will add a button element before the h1 element, i.e:
+
+    <button>New</button><h1>Hello</h1>
 
 Add element after another:
 
     $("h1").after("<button>New</button>");
 
-This will add a button element after the h1 element, i.e. <h1>Hello</h1><button>New</button>
+This will add a button element after the h1 element, i.e:
+
+    <h1>Hello</h1><button>New</button>
 
 Prepend element:
 
     $("h1").prepend("<button>New</button>");
 
-This will add the button within the h1 element, before the current innerHTML, i.e. <h1><button>New</button>Hello</h1>
+This will add the button within the h1 element, before the current innerHTML, i.e:
+
+    <h1><button>New</button>Hello</h1>
 
 Append element:
 
     $("h1").append("<button>New</button>");
 
-This will add the button within the h1 element, after the current innerHTML, i.e. <h1>Hello<button>New</button></h1>
+This will add the button within the h1 element, after the current innerHTML, i.e:
+
+    <h1>Hello<button>New</button></h1>
 
 ### Removing Element
 
