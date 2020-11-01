@@ -1,5 +1,9 @@
 # uHost Landing Page
 
+An example landing page for a fictional company called uHost.
+
+Hosted example: http://uhost-landing-page.s3-website.ca-central-1.amazonaws.com/
+
 # CSS Theory
 
 Cascading Style Sheets: Cascading means that multiple rules can apply to the same element
@@ -45,6 +49,76 @@ Syntax:
     [disabled] {
 
     }
+
+    [type] {
+
+    }
+
+Element with specific attribute value:
+
+    [type="email"] {
+
+    }
+
+Element with specific attribute value in list:
+
+    [lang~="en-us"] {
+
+    }
+
+MATCHES:
+
+    <p lang="en-us en-gb">Hi!</p>
+
+Element with specific attribute value OR value as value-prefix:
+
+    [lang|="en"] {
+
+    }
+
+MATCHES:
+
+    <p lang="en-us">Hi!</p>
+
+Element with specific attribute value prefix:
+
+    [href^="#"] {
+
+    }
+
+MATCHES:
+
+    <a href="#all">Link</a>
+
+Element with specific attribute value suffix:
+
+    [href$=".de"] {
+
+    }
+
+MATCHES:
+
+    <a href="ab.de">Link</a>
+
+Element with at least one attribute value:
+
+    [src*="cdn"] {
+
+    }
+
+MATCHES:
+
+    <img src="i.cdn.com">Link</a>
+
+Check values case-insensitivity:
+
+    [src*="cdn" i] {
+
+    }
+
+MATCHES:
+
+    <img src="i.CDN.com">Link</a>
 
 ### Universal
 
@@ -231,6 +305,8 @@ fixed -> top, bottom, left, right are positioned based on viewport. takes elemen
 
 sticky -> combination of relative and fixed. acts like a fixed element once a certain border is reached. element stops being fixed once it reaches the end of the content of its parent element.
 
+margin: auto -> center elements on page. only works for block level elements with an explicitly assigned width.
+
 ## Units and Sizes
 
 pixels (px) -> absolute length. mostly ignores user setting.
@@ -296,3 +372,99 @@ viewport width (vw) -> adjust to current viewport. 100vw is 100% of viewport wid
         <td>%</td>
     </tr>
 </table>
+
+## Text and Fonts
+
+### Generic Families and Font Families
+
+<table>
+  <thead>
+        <tr>
+            <th>Generic</th>
+            <th>Font</th>
+        </tr>
+    </thead>
+    <tr>
+        <td>serif</td>
+        <td>Times New Roman, Georgia</td>
+    </tr>
+    <tr>
+        <td>sans-serif</td>
+        <td>Helvetica, Verdana</td>
+    </tr>
+    <tr>
+        <td>cursive</td>
+        <td>Brush Script, Mistral</td>
+    </tr>
+    <tr>
+        <td>monospace</td>
+        <td>Courier New, Lucida Bright</td>
+    </tr>
+    <tr>
+        <td>fantasy</td>
+        <td></td>
+    </tr>
+</table>
+
+## Flexbox
+
+### Flex Container -> Parent
+
+Property -> display: flex;
+
+flex-flow -> flex-direction flex-wrap
+
+flex-direction -> row (main axis left-right); column (main axis top-bottom)
+
+justify-content -> main axis
+
+align-content -> cross axis
+
+align-items -> cross axis
+
+### Flex Items -> Children
+
+order -> order of items. ex: -1 would be ahead of all items.
+
+align-self -> allows to align an item in a flex container
+
+flex-grow, flex-shrink, flex-basis
+
+## CSS Grid
+
+### Defining Rows and Columns
+
+Syntax:
+
+    .container {
+      display: grid;
+      grid-template-columns: 2fr 200px 1fr 20%; <- 4 columns
+      grid-template-rows: 5rem 2 rem; <- 2 rows
+    }
+
+### Positioning Elements
+
+Syntax:
+
+    .el3 {
+      grid-column-start: 3;
+      grid-column-end: 5;
+      grid-row-start: 1;
+      grid-row-end: 3;
+    }
+
+## SASS
+
+### Install
+
+    $ sudo gem install sass
+
+### Compile
+
+Compile .sass and .scss files to .css:
+
+    $ sass <source.sass> <destination.css>
+
+Watch mode:
+
+    $ sass --watch <source.sass>:<destination.css>
